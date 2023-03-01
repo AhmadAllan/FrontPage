@@ -23,7 +23,6 @@ beat.addEventListener('click', () => {
 
 funTime.addEventListener("mouseover", () => {
     auidoFun.play();
-})
-  
+}); 
 
 
