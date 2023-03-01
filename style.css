@@ -113,10 +113,18 @@ hr{
     background-color: #003345 ;
     border-radius: 15px;
     font-size: 1.1em;
-    text-align: center;
-    display: inline-block;
-    padding: 0px 10px 0px 10px;
-    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 300px;
+    padding: 10px 10px;
+}
+
+@media only screen and (max-width: 786px) {
+    .funTime{
+        margin: 50px 50px;
+        padding: 10px 10px;
+    }
 }
 .funTime button{
     background-color: #444f5c;
