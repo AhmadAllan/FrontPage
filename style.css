@@ -1,0 +1,138 @@
+body {
+    background-color: #262626;
+}
+
+.nav {
+    display: flex;
+    background-color: #4d4d4d;
+    justify-content: space-around;
+}
+
+.nav > div {
+    margin: 2px;
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.nav > div:hover{
+    background-color: #444f5c;
+    cursor: pointer;
+}
+
+.body {
+    display: flex;
+    gap: 10%;
+    color: wheat;
+    justify-content: center;
+    text-align: center;
+}
+.body > .left {
+    align-self: center;
+}
+.right > button{
+    margin: 20px;
+    background-color: transparent;
+    border: 0px;
+}
+
+
+
+@media only screen and (max-width: 786px) {
+    .body {
+        display: flex;
+        flex-direction: column;
+        gap: 30%;
+        color: wheat;
+    }
+    
+
+    .right img {
+        width: 350px;
+        height: 219px;
+    }
+}
+
+.right button:hover{
+    cursor: pointer;
+    background-color: #4d4d4d;
+}
+
+.fav{
+    margin-top: 10%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.fav > div {
+    padding: 50px;
+    border: 2px solid black;
+    text-align: center;
+    font-size: larger;
+}
+
+.fav > div:hover {
+    box-shadow: 5px 5px 5px rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 500px){
+    .fav > div {
+        padding: 25px;
+    }
+}
+
+.fortune {
+    margin: 30px;
+    background-color: #4d4d4d;
+}
+
+.fortune > p{
+    padding: 10px;
+    text-align: left;
+}
+
+#text {
+    height: 5px;
+    width: 90%;
+    border: 0px ;
+    border-radius: 2px;
+    background-color: #262626;
+}
+hr{
+    height: 5px;
+    width: 95%;
+    border: 0px ;
+    border-radius: 2px;
+    background-color: #4d4d4d;
+
+}
+
+.funTime{
+    background-color: #003345 ;
+    border-radius: 15px;
+    font-size: 1.1em;
+    text-align: center;
+    display: inline-block;
+    padding: 0px 10px 0px 10px;
+    margin-left: 30px;
+}
+.funTime button{
+    background-color: #444f5c;
+    border: 0px;
+    border-radius: 5px;
+    margin-left: 30px;
+    padding: 5px;
+}
+
+.funTime button:hover{
+    cursor: pointer;
+}
+
+.footer{
+    width: 100%;
+    background-color: #4d4d4d;
+    text-align: center;
+}
+
