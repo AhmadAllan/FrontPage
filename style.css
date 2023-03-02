@@ -2,6 +2,7 @@ body {
     background-color: #262626;
 }
 
+/* navigation bar section */
 .nav {
     display: flex;
     background-color: #4d4d4d;
@@ -20,7 +21,7 @@ body {
     background-color: #444f5c;
     cursor: pointer;
 }
-
+/* body section*/
 .body {
     display: flex;
     gap: 10%;
@@ -37,30 +38,16 @@ body {
     border: 0px;
 }
 
-
-
-@media only screen and (max-width: 786px) {
-    .body {
-        display: flex;
-        flex-direction: column;
-        gap: 30%;
-        color: wheat;
-    }
-    
-
-    .right img {
-        width: 350px;
-        height: 219px;
-    }
-}
-
 .right button:hover{
     cursor: pointer;
     background-color: #4d4d4d;
 }
 
+
+/*favourite section*/
+
 .fav{
-    margin-top: 10%;
+    margin: 30px;
     display: flex;
     justify-content: space-around;
 }
@@ -77,14 +64,11 @@ body {
     cursor: pointer;
 }
 
-@media only screen and (max-width: 500px){
-    .fav > div {
-        padding: 25px;
-    }
-}
+/*qoute section*/
 
 .fortune {
-    margin: 30px;
+    margin: 10%;
+    text-align: center;
     background-color: #4d4d4d;
 }
 
@@ -108,6 +92,7 @@ hr{
     background-color: #4d4d4d;
 
 }
+/* fun Time section*/
 
 .funTime{
     background-color: #003345 ;
@@ -120,12 +105,7 @@ hr{
     padding: 10px 10px;
 }
 
-@media only screen and (max-width: 786px) {
-    .funTime{
-        margin: 50px 50px;
-        padding: 10px 10px;
-    }
-}
+
 .funTime button{
     background-color: #444f5c;
     border: 0px;
@@ -138,9 +118,36 @@ hr{
     cursor: pointer;
 }
 
+/*footer section*/
+
 .footer{
     width: 100%;
     background-color: #4d4d4d;
     text-align: center;
 }
 
+/* Mobile device config*/
+
+@media only screen and (max-width: 786px) {
+    .body {
+        display: flex;
+        flex-direction: column;
+    }
+    
+
+    .right img {
+        width: 350px;
+        height: 219px;
+    }
+
+    .fav > div {
+        padding: 20px;
+        margin: 1%;
+    }
+
+    .funTime{
+        font-size: medium;
+        margin: 1%;
+        text-align: center;
+    }
+}

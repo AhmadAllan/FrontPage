@@ -20,7 +20,8 @@ beat.addEventListener('click', () => {
    }
 });
 
-
+// this function paly the audio when hover over the button
+// TODO: the music should stop when get away from the button
 funTime.addEventListener("mouseover", () => {
     auidoFun.play();
 }); 
