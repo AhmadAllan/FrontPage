@@ -21,6 +21,11 @@ body {
     background-color: #444f5c;
     cursor: pointer;
 }
+
+.nav a {
+    text-decoration: none;
+    color: white;
+}
 /* body section*/
 .body {
     display: flex;
@@ -151,3 +156,5 @@ hr{
         text-align: center;
     }
 }
+
+/* ############################  My Projects page css */
