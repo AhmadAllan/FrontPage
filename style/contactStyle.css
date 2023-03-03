@@ -10,9 +10,16 @@
 *{
     color: var(--text-color);
 }
+
+html, body {
+    height: 100%;
+  }
+
 body {
     background-color: var(--primary-color);
 }
+
+/*nav section*/
 .nav {
     display: flex;
     background-color: var(--secondary-color);
@@ -28,17 +35,25 @@ body {
 }
 
 .nav > div:hover{
-    background-color: var(--selected-color);
+    background-color: var(--secondary-color);
     cursor: pointer;
 }
 
 .nav a {
     text-decoration: none;
-    color: var(--text-color);
+    color: white;
 }
 
-/* main section*/
-main {
-    margin: 5%;
+/*Container section*/
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-  
+
+.container > div {
+    margin: 50px;
+}
