@@ -1,0 +1,92 @@
+:root {
+    --primary-color: #1d1d1d;
+    --secondary-color: #2b2b2b;
+    --accent-color: #c70039;
+    --light-color: #eeeeee;
+    --text-color: #ffffff;
+    --border-color : #ddd;
+    --selected-color: #4d4d4d;
+}
+
+*{
+    color: var(--text-color);
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--primary-color);
+}
+
+/* navigation bar section */
+.nav {
+    display: flex;
+    background-color: var(--secondary-color);
+    justify-content: space-around;
+}
+
+.nav > div {
+    margin: 2px;
+    padding: 10px;
+    font-size: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.nav > div:hover{
+    background-color: var(--selected-color);
+    cursor: pointer;
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* add button */
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+button {
+    border: 2px solid var(--accent-color);
+    border-radius: 10px;
+    background-color: transparent;
+    padding:5px 5px;
+}
+
+button:hover {
+    border: 2px solid;
+    background-color: #4BB543;
+}
+
+textarea {
+    background-color: #2b2b2b;
+    width: 80%;
+    min-height: 50px;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+/* li design */
+ 
+li {
+    border: 2px solid var(--selected-color);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+li button {
+    width: fit-content;
+    height: fit-content;
+    align-self: center;
+    margin-left: 5px;
+}

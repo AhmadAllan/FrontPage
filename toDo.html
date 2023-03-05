@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My To-Do list</title>
+    <link rel="stylesheet" href="style/toDoStyle.css">
+</head>
+<body>
+    <!-- navigation bar -->
+    <div class="nav">
+        <div class="btn1"><a href="index.html">Home</a></div>
+        <div class="btn2" ><a href="projects.html">My Projects</a></div>
+        <div class="btn3"><a href="about.html">About me</a></div>
+        <div class="btn4"><a href="contact.html">Contect</a></div>
+    </div>
+    <h1>here i put my progress in things i like to learn or to do</h1>
+    <div class="container">
+        <h3>Tasks</h3>
+        <button onclick="showTextArea()"" class="add">Add a task</button>
+        <div class="tasks">
+            <div id="add-item-container" style="display:none;">
+                <textarea id="new-item-textarea"></textarea>
+                <button onclick="saveNewItem()">Save</button>
+            </div>
+            <!-- HTML code for the list of items -->
+            <ul id="item-list"></ul>
+        </div>
+        <script src="script/toDoScript.js"></script>
+    </div>
+</body>
+</html>
