@@ -74,7 +74,9 @@ function saveNewItem() {
       newItemDeleteButton.innerHTML = "Remove";
       newItemDeleteButton.setAttribute("onclick", "removeItem(" + i + ")");
       newItemElement.appendChild(newItemDeleteButton);
+      const donePara = document.getElementById("done");
       if (item.checked) {
+        donePara.style.display = "block";
         newItemParagraph.style.textDecoration = "line-through";
         doneList.appendChild(newItemElement);
       } else {
