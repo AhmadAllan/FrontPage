@@ -8,7 +8,7 @@ function showTextArea() {
     }
   }
   
-  // JavaScript code to save the new item to the list
+  // save the new item to the list
 function saveNewItem() {
     var newItemText = document.getElementById("new-item-textarea").value;
     var savedItems = JSON.parse(localStorage.getItem("savedItems")) || [];
@@ -19,7 +19,19 @@ function saveNewItem() {
   }
   
 
-  // JavaScript code to save an edited item in the list
+  // edit item
+  function editItem(paragraph, index) {
+    var savedItems = JSON.parse(localStorage.getItem("savedItems")) || [];
+    var item = savedItems[index];
+    var newText = prompt("Edit item text", item.text);
+    if (newText != null) {
+      item.text = newText;
+      localStorage.setItem("savedItems", JSON.stringify(savedItems));
+      paragraph.innerHTML = newText;
+    }
+  }
+
+  // save an edited item in the list
   function saveEditedItem(newTextarea) {
     var itemText = newTextarea.value;
     var newItemParagraph = document.createElement("p");
@@ -29,13 +41,22 @@ function saveNewItem() {
     newTextarea.parentNode.replaceChild(newItemParagraph, newTextarea);
   }
 
+   // update item
+  function updateItem(checkbox, index) {
+    var savedItems = JSON.parse(localStorage.getItem("savedItems")) || [];
+    savedItems[index].checked = checkbox.checked;
+    localStorage.setItem("savedItems", JSON.stringify(savedItems));
+    const done = document.getElementById("item-list-done");
+  }
   
   
-  // JavaScript code to load the saved items from local storage
+  // load the saved items from local storage
   function loadSavedItems() {
     var savedItems = JSON.parse(localStorage.getItem("savedItems")) || [];
     var itemList = document.getElementById("item-list");
+    var doneList = document.getElementById("item-list-done");
     itemList.innerHTML = "";
+    doneList.innerHTML = "";
     for (var i = 0; i < savedItems.length; i++) {
       var item = savedItems[i];
       var newItemElement = document.createElement("li");
@@ -53,26 +74,16 @@ function saveNewItem() {
       newItemDeleteButton.innerHTML = "Remove";
       newItemDeleteButton.setAttribute("onclick", "removeItem(" + i + ")");
       newItemElement.appendChild(newItemDeleteButton);
-      itemList.appendChild(newItemElement);
+      if (item.checked) {
+        newItemParagraph.style.textDecoration = "line-through";
+        doneList.appendChild(newItemElement);
+      } else {
+        itemList.appendChild(newItemElement);
+      }
     }
   }
-  function updateItem(checkbox, index) {
-    var savedItems = JSON.parse(localStorage.getItem("savedItems")) || [];
-    savedItems[index].checked = checkbox.checked;
-    localStorage.setItem("savedItems", JSON.stringify(savedItems));
-  }
-
-  function editItem(paragraph, index) {
-    var savedItems = JSON.parse(localStorage.getItem("savedItems")) || [];
-    var item = savedItems[index];
-    var newText = prompt("Edit item text", item.text);
-    if (newText != null) {
-      item.text = newText;
-      localStorage.setItem("savedItems", JSON.stringify(savedItems));
-      paragraph.innerHTML = newText;
-    }
-  }
-
+  
+  // remove item throught button
   function removeItem(index) {
     var savedItems = JSON.parse(localStorage.getItem("savedItems")) || [];
     savedItems.splice(index, 1);
