@@ -1,24 +1,23 @@
-let xhr = new XMLHttpRequest();
-
-function showTextArea() {
-    let addItemContainer = document.getElementById("add-item-container");
+// this part responsible for show text area after click on add buton
+document.getElementById("addBtn").addEventListener("click", () =>{
+  let addItemContainer = document.getElementById("add-item-container");
     if (addItemContainer.style.display === "none") {
       addItemContainer.style.display = "flex";
       addItemContainer.style.gap = "10px"
     } else {
       addItemContainer.style.display = "none";
     }
-  }
-  
-  // save the new item to the list
-function saveNewItem() {
+});
+
+// this part responsible for svae the text and send it to php to process it and savr it in database
+document.getElementById("saveBtn").addEventListener("click", () => {
     let newItemText = document.getElementById("new-item-textarea").value;
     let savedItems = JSON.parse(localStorage.getItem("savedItems")) || [];
     savedItems.push({text: newItemText, checked: false});
     localStorage.setItem("savedItems", JSON.stringify(savedItems));
     loadSavedItems();
     document.getElementById("new-item-textarea").value = "";
-  }
+});
   
 
   // edit item
