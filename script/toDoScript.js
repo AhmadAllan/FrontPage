@@ -1,5 +1,7 @@
+let xhr = new XMLHttpRequest();
+
 function showTextArea() {
-    var addItemContainer = document.getElementById("add-item-container");
+    let addItemContainer = document.getElementById("add-item-container");
     if (addItemContainer.style.display === "none") {
       addItemContainer.style.display = "flex";
       addItemContainer.style.gap = "10px"
@@ -10,8 +12,8 @@ function showTextArea() {
   
   // save the new item to the list
 function saveNewItem() {
-    var newItemText = document.getElementById("new-item-textarea").value;
-    var savedItems = JSON.parse(localStorage.getItem("savedItems")) || [];
+    let newItemText = document.getElementById("new-item-textarea").value;
+    let savedItems = JSON.parse(localStorage.getItem("savedItems")) || [];
     savedItems.push({text: newItemText, checked: false});
     localStorage.setItem("savedItems", JSON.stringify(savedItems));
     loadSavedItems();
@@ -21,9 +23,9 @@ function saveNewItem() {
 
   // edit item
   function editItem(paragraph, index) {
-    var savedItems = JSON.parse(localStorage.getItem("savedItems")) || [];
-    var item = savedItems[index];
-    var newText = prompt("Edit item text", item.text);
+    let savedItems = JSON.parse(localStorage.getItem("savedItems")) || [];
+    let item = savedItems[index];
+    let newText = prompt("Edit item text", item.text);
     if (newText != null) {
       item.text = newText;
       localStorage.setItem("savedItems", JSON.stringify(savedItems));
@@ -33,9 +35,9 @@ function saveNewItem() {
 
   // save an edited item in the list
   function saveEditedItem(newTextarea) {
-    var itemText = newTextarea.value;
-    var newItemParagraph = document.createElement("p");
-    var newItemParagraphNode = document.createTextNode(itemText);
+    let itemText = newTextarea.value;
+    let newItemParagraph = document.createElement("p");
+    let newItemParagraphNode = document.createTextNode(itemText);
     newItemParagraph.appendChild(newItemParagraphNode);
     newItemParagraph.setAttribute("onclick", "editItem(this)");
     newTextarea.parentNode.replaceChild(newItemParagraph, newTextarea);
@@ -43,7 +45,7 @@ function saveNewItem() {
 
    // update item
   function updateItem(checkbox, index) {
-    var savedItems = JSON.parse(localStorage.getItem("savedItems")) || [];
+    let savedItems = JSON.parse(localStorage.getItem("savedItems")) || [];
     savedItems[index].checked = checkbox.checked;
     localStorage.setItem("savedItems", JSON.stringify(savedItems));
     const done = document.getElementById("item-list-done");
@@ -52,25 +54,25 @@ function saveNewItem() {
   
   // load the saved items from local storage
   function loadSavedItems() {
-    var savedItems = JSON.parse(localStorage.getItem("savedItems")) || [];
-    var itemList = document.getElementById("item-list");
-    var doneList = document.getElementById("item-list-done");
+    let savedItems = JSON.parse(localStorage.getItem("savedItems")) || [];
+    let itemList = document.getElementById("item-list");
+    let doneList = document.getElementById("item-list-done");
     itemList.innerHTML = "";
     doneList.innerHTML = "";
-    for (var i = 0; i < savedItems.length; i++) {
-      var item = savedItems[i];
-      var newItemElement = document.createElement("li");
-      var newItemCheckbox = document.createElement("input");
+    for (let i = 0; i < savedItems.length; i++) {
+      let item = savedItems[i];
+      let newItemElement = document.createElement("li");
+      let newItemCheckbox = document.createElement("input");
       newItemCheckbox.setAttribute("type", "checkbox");
       newItemCheckbox.setAttribute("onclick", "updateItem(this, " + i + ")");
       newItemCheckbox.checked = item.checked;
       newItemElement.appendChild(newItemCheckbox);
-      var newItemParagraph = document.createElement("p");
+      let newItemParagraph = document.createElement("p");
       newItemParagraph.setAttribute("onclick", "editItem(this, " + i + ")");
-      var newItemTextNode = document.createTextNode(item.text);
+      let newItemTextNode = document.createTextNode(item.text);
       newItemParagraph.appendChild(newItemTextNode);
       newItemElement.appendChild(newItemParagraph);
-      var newItemDeleteButton = document.createElement("button");
+      let newItemDeleteButton = document.createElement("button");
       newItemDeleteButton.innerHTML = "Remove";
       newItemDeleteButton.setAttribute("onclick", "removeItem(" + i + ")");
       newItemElement.appendChild(newItemDeleteButton);
@@ -87,7 +89,7 @@ function saveNewItem() {
   
   // remove item throught button
   function removeItem(index) {
-    var savedItems = JSON.parse(localStorage.getItem("savedItems")) || [];
+    let savedItems = JSON.parse(localStorage.getItem("savedItems")) || [];
     savedItems.splice(index, 1);
     localStorage.setItem("savedItems", JSON.stringify(savedItems));
     loadSavedItems();
