@@ -4,6 +4,7 @@ const audioBeat = document.querySelector(".audioBeat");
 const auidoFun = document.querySelector(".audioFun")
 const img = document.querySelector(".press");
 
+
 //this function play the audio when click on beat button
 beat.addEventListener('click', () => {
    if(audioBeat.paused){

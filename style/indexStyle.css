@@ -12,11 +12,8 @@
     color: var(--text-color);
 }
 
-html, body {
-    height: 100%;
-  }
-
 body {
+    height: 100vh;
     background-color: var(--primary-color);
 }
 
@@ -63,7 +60,6 @@ body {
     cursor: pointer;
     background-color: var(--selected-color);
 }
-
 
 /*favourite section*/
 

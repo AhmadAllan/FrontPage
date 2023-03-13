@@ -18,12 +18,16 @@
     <h1>here i put my progress in things i like to learn or to do</h1>
     <div class="container">
         <h3>Tasks</h3>
-        <button onclick="showTextArea()"" class="add">Add a task</button>
+        <button  id="add">Add a task</button>
         <div class="tasks">
-            <div id="add-item-container" style="display:none;">
-                <textarea id="new-item-textarea"></textarea>
-                <button onclick="saveNewItem()">Save</button>
-            </div>
+            <div class="add-container">
+                <div class="dialog-box">
+                  <h2>Enter Text</h2>
+                  <input type="text" id="text-input" placeholder="Enter your text here">
+                  <button id="save-btn">Save</button>
+                </div>
+              </div>
+              <div class="background"></div>
             <!-- HTML code for the list of items -->
             <h1 id="to-do">to do</h1>
             <ul id="item-list"></ul>
@@ -31,7 +35,7 @@
             <h1 id="done" style="display: none;">done</h1>
             <ul id="item-list-done" ></ul>
         </div>
-        <script src="script/toDoScript.js"></script>
+        <script src="script/toDoScriptNew.js"></script>
     </div>
 </body>
 </html>
