@@ -50,7 +50,7 @@ function play(playerSelection) {
 
         alert(`Round ${round}: You lose! ${computerSelection} beats ${playerSelection}`);
       }
-    }, 100);
+    }, 500);
 
   
     // Check if it's the last round
